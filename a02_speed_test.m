@@ -5,17 +5,17 @@ clearvars
 %% Setup
 % Controls what convolution implementations will be used.
 % Options: 
-%   @builtinConv, @builtinConvUncorrected
-%   @fftConv, @fftConvUncorrected
+%   @builtinConv, @builtinConvModified
+%   @fftConv, @fftConvModified
 %   @integralConv, @integralConvDS, @integralConvJGD
-%   @iterativeConv, @iterativeConvAG
+%   @iterativeConv, @iterativeConvAG, @iterativeConvFaster
 %   []  <--- this will use linear least squares
-convfunctions = {@builtinConv, @fftConv, @iterativeConv, @integralConv, []};
+convfunctions = {@iterativeConvFaster, @integralConv, @fftConv, @builtinConv, @builtinConvModified, []};
 
 % Controls how many time the fit is repeated
 % e.g. nrep=2 means that an average from 2 fits will be used
 % (Higher number = script takes longer to run)
-nrep = 2;
+nrep = 3;
 
 % Temporally downsample the data to make the fitting faster for all
 % implementations. (set to 1 to disable downsampling)

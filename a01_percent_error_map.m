@@ -7,12 +7,12 @@
 % Controls what convolution implementations will be used.
 % Please make sure there are 6 or fewer options selected
 % Options: 
-%   @builtinConv, @builtinConvUncorrected
-%   @fftConv, @fftConvUncorrected
+%   @builtinConv, @builtinConvModified
+%   @fftConv, @fftConvModified
 %   @integralConv, @integralConvDS, @integralConvJGD
 %   @iterativeConv, @iterativeConvAG
 %   []  <--- this will use linear least squares
-convfunctions = {@builtinConv, @builtinConvUncorrected, @iterativeConv, @fftConv, @integralConv, []};
+convfunctions = {@iterativeConvFaster, @integralConv, @fftConv, @builtinConv, @builtinConvModified, []};
 
 %% Load data
 addpath("./mfiles")

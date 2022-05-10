@@ -1,7 +1,7 @@
 function [f] = iterativeConv(A,B,t)
     % Does conv(A,exp(-B*t))
     % Based on Flouri et al. (2016) MRM 76(3), doi: 10.1002/mrm.25991
-    % (The version in @iterativeConvAG may be faster)
+    % (The version in @iterativeConvFaster may be faster if t is uniformly increasing)
         
     n = length(t);
 	
